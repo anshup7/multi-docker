@@ -14,10 +14,10 @@ after_success:
   - docker build -t anshup7/multi-server ./server
   - docker build -t anshup7/multi-worker ./worker
 
-# Login to Docker hub
-echo "$PASSWORD" | docker login -u "$USER_NAME" --password-stdin
-#Push the images to docker hub
-- docker push anshup7/multi-client
-- docker push anshup7/multi-nginx
-- docker push anshup7/multi-server
-- docker push anshup7/multi-worker
+  # Login to Docker hub
+  - echo "$PASSWORD" | docker login -u "$USER_NAME" --password-stdin
+  #Push the images to docker hub
+  - docker push anshup7/multi-client
+  - docker push anshup7/multi-nginx
+  - docker push anshup7/multi-server
+  - docker push anshup7/multi-worker
